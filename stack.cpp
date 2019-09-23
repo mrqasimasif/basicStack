@@ -6,7 +6,7 @@ The nexttNode reference of the last node is always null to avoid GARBAGE ACCESS
 #include"nodeClass.cpp"
 using namespace std;
 
-class cStack{
+class cStack{  
     //The dynamic memory location that is going to serve as the BASE REFERENCE to the whole STACK
     cNode *topRef;
 public:
