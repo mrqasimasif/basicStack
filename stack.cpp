@@ -1,6 +1,6 @@
 /*
 LAST IN FIRST OUT
-The nexttNode reference of the last node is always null to avoid GARBAGE ACCESS
+The nextNode reference of the last node is always null to avoid GARBAGE ACCESS
 */
 #include<iostream>
 #include"nodeClass.cpp"
@@ -20,7 +20,7 @@ public:
     Parameterized Class Constructor
     Generating a single node stack using pointer Reference to avoid multiple pointer to same node
     */
-    cStack( cNode &*topPtr) : topRef(topPtr) {topRef->nextNode = NULL; topRef=NULL; }
+    cStack( cNode *&topPtr) : topRef(topPtr) {topRef->nextNode = NULL; topRef=NULL; }
 
     /*
     Check the BASE REFERENCE to determin whether the STACK is empty or not 
@@ -32,7 +32,7 @@ public:
     Push a node at the end of the STACK using previousLastNode Next Reference to New node 
     Returning Reference will allow cascadeability use
     */
-    cStack& push(cNode &*nodeRef) { nodeRef->nextNode = topRef; topRef = nodeRef; nodeRef = NULL; }
+    cStack& push(cNode *&nodeRef) { nodeRef->nextNode = topRef; topRef = nodeRef; nodeRef = NULL; }
 
     /*
     To extract the first node element of the STACK 
