@@ -26,16 +26,10 @@ int main() {
 	n[7] = new cNode('+');
 	n[8] = new cNode('*');
 
-	inputStack.push(n[0]);
-	inputStack.push(n[1]);
-	inputStack.push(n[2]);
-	inputStack.push(n[3]);
-	inputStack.push(n[4]);
-	inputStack.push(n[5]);
-	inputStack.push(n[6]);
-	inputStack.push(n[7]);
-	inputStack.push(n[8]);
-	
+	for (int i = 0; i < 9; i++) {
+		inputStack.push(n[i]);
+	}
+		
 	cout << "Alaala";
 	while (inputStack.isNotEmpty()) {
 		cNode *instantPop = inputStack.pop();
